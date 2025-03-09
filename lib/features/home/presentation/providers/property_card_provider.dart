@@ -7,8 +7,8 @@ class PropertyCardProvider extends ChangeNotifier {
   bool get hasShown => _hasShown;
 
   // Animation constants
-  static const animationDuration = Duration(milliseconds: 800);
-  static const expandDelay = Duration(milliseconds: 2400);
+  static const animationDuration = Duration(milliseconds: 1000);
+  static const expandDelay = Duration(milliseconds: 3500);
   static const shimmerDelay = Duration(milliseconds: 1500);
   static const shimmerDuration = Duration(milliseconds: 1800);
 
