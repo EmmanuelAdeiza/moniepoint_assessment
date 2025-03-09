@@ -72,7 +72,8 @@ class _PropertyCardState extends State<PropertyCard> with SingleTickerProviderSt
   Widget _buildAddressText(BuildContext context, PropertyCardProvider provider) {
     return FadeTransition(
       opacity: _animation,
-      child: Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         child: Text(
           provider.property?.address ?? '',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -82,6 +83,7 @@ class _PropertyCardState extends State<PropertyCard> with SingleTickerProviderSt
               ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
+          textAlign: provider.isMainCard ? TextAlign.center : TextAlign.start,
         ),
       ),
     );
@@ -169,16 +171,7 @@ class _PropertyCardState extends State<PropertyCard> with SingleTickerProviderSt
               ),
             ],
           ),
-        )
-            // .animate(
-            //   onPlay: (controller) => controller.repeat(reverse: true),
-            // )
-            // .shimmer(
-            //   delay: PropertyCardProvider.shimmerDelay.inMilliseconds.ms,
-            //   duration: PropertyCardProvider.shimmerDuration.inMilliseconds.ms,
-            // )
-
-            ;
+        );
       },
     );
   }
